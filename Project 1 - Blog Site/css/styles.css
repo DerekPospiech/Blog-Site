@@ -1,0 +1,150 @@
+@import "button.css";
+@import "blogCard.css";
+@import "sidebarBox.css";
+
+.container{
+    display:grid;
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "header header header"
+        "Blog-Content Blog-Content Blog-Content"
+        "sidebar sidebar sidebar"
+        "footer footer footer"
+
+}
+
+.header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "Title Title Title"
+                        "Button Button Button";
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.Title{
+ grid-area: Title;
+ justify-self: center;
+ align-self: center;
+}
+
+.FollowButton{
+    grid-area: Button;
+    justify-self: center;
+    align-self: center;
+    margin: 10px;  
+}
+
+.Blog-Content{
+    grid-area: Blog-Content;
+    grid-gap: 20px;
+    display: flex;
+    min-width: 275px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+img{
+    width: 100%;
+}
+
+.Sidebar-Container{
+    grid-area: sidebar;
+    display:flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 10px;
+}
+
+
+.Footer-Container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: footer;
+    border-top: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.SocialMedia{
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+p.creator{
+    color:grey !important;
+    font-size: .75em;
+}
+
+.author-pic{
+    max-width: 350px;
+}
+
+.Author-Bio{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    max-width: 500px;
+}
+
+.Author-Bio:hover {
+    transition: box-shadow .3s;
+    box-shadow: 0 0 11px lightgrey; 
+}
+
+.Bio-Card{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+.post{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    max-width: 500px;
+}
+
+.post:hover {
+    transition: box-shadow .3s;
+    box-shadow: 0 0 11px lightgrey; 
+}
+
+.blog1{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+@media (min-width: 400px) {
+    .header{
+        grid-template-areas: "Logo Title Button";
+    }
+    .FollowButton{
+        justify-self: end;
+    }
+
+}
+
+@media (min-width: 600px) {
+    .Sidebar-Container{
+       flex-direction: row;
+       width: 98%;
+       justify-content: space-evenly;
+    }
+    .SidebarBox{
+      max-width: 350px;
+    }
+}
+
